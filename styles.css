@@ -1,0 +1,120 @@
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightblue;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    
+}
+
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 30vh;
+}
+
+#play-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#play-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.ship {
+    background-color: blue;
+    border: 1px solid red;
+    cursor: grab;
+}
+
+#ship-holder > .ship-container {
+    position: relative;
+    border: 1px solid black;
+}
+
+#ship-holder, #opponent-board{
+    visibility: show;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+    background-color: rgb(130, 130, 130);
+    height: 50vh;
+    aspect-ratio: 1;
+
+    border: 1px solid black;
+}
+
+.board > .cell {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+    font-weight: bold;
+    user-select: none;
+}
+
+.board > .dragged-over-safe {
+    border: 1px solid yellow;
+}
+
+.board > .dragged-over-error {
+    border: 1px solid rgb(255, 0, 0);
+}
+
+#board-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vh;
+    padding: 1vw;
+}
+
+button {
+    height: 4.8vh;
+    aspect-ratio: 2;
+
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+#back-btn {
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+}
+
+#game-dialog {
+    background-color: grey;
+    border: 1px solid black;
+    height: 50vh;
+    aspect-ratio: 1;
+}
